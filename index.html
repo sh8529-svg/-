@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>王者邀请函</title>
+    <style>
+        body { text-align: center; font-family: Arial; background-color: pink; }
+        #result { margin-top: 20px; font-size: 18px; line-height: 1.5; }
+        button { padding: 15px 30px; font-size: 18px; margin: 10px; cursor: pointer; position: relative; }
+    </style>
+</head>
+<body>
+
+<h1>💌邀请函💌</h1>
+<p>❤️喜+喜=囍❤️</p>
+<p>🎀良辰已定吉日待访🎀</p>
+<p>❤️吾有想法 去吃大餐❤️</p>
+<p>🎀诚挚的邀请您一起共赴王者峡谷🎈</p>
+<p>🕧时间:2026年2月28日</p>
+<p>❤️我们相约不见不散❤️</p>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    你的浏览器不支持音频播放
+</audio>
+
+<h2>打不打王者荣耀？</h2>
+
+<button id="yesBtn">打</button>
+<button id="noBtn">不打</button>
+
+<div id="result"></div>
+
+<script>
+    const resultDiv = document.getElementById('result');
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const music = document.getElementById('bgMusic');
+
+    yesBtn.onclick = function() {
+        // 播放音乐
+        music.play();
+
+        // 输出 50 次强制上号
+        resultDiv.innerHTML = "";
+        for(let i=0; i<50; i++){
+            resultDiv.innerHTML += "上号！！！<br>";
+        }
+
+        alert("上号！！");
+    }
+
+    noBtn.onmouseover = function() {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        noBtn.style.position = 'absolute';
+        noBtn.style.left = x + 'px';
+        noBtn.style.top = y + 'px';
+    }
+
+    noBtn.onclick = function() {
+        resultDiv.innerHTML = "";
+        for(let i=0;i<50;i++){
+            resultDiv.innerHTML += "上号!<br>";
+        }
+        alert("上号");
+    }
+
+    window.onbeforeunload = function() {
+        return "上号！";
+    };
+</script>
+
+</body>
+</html>
